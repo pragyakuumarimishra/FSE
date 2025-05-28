@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Community Event Portal - CSS3 Exercises</title>
+
+<!-- 2. Internal CSS: Embedded style tag in head -->
+<style>
+  /* Reset margins and paddings for all elements */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body background with fallback color and background image */
+  body {
+    background-color: #f0f4f8; /* fallback */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    color: #333;
+  }
+
+  /* Header styles */
+  #mainHeader {
+    background: linear-gradient(90deg, #007BFF, #00C6FF);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Event cards container */
+  .eventCard {
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #0056b3;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Group selector for h3 and p inside event cards */
+  .eventCard h3,
+  .eventCard p {
+    margin-bottom: 10px;
+  }
+
+  /* Link styling */
+  a:link {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  a:active {
+    color: #003d7a;
+  }
+  a:visited {
+    color: #551A8B;
+  }
+
+  /* Navigation list styling */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  nav ul li {
+    padding: 5px 10px;
+  }
+
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+  }
+  th, td {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    background-color: #e6f0ff;
+  }
+  tr:nth-child(even) {
+    background-color: #cce0ff;
+  }
+
+  /* Outline example */
+  input:focus {
+    outline: 3px solid #007BFF;
+  }
+
+  /* Visibility vs display */
+  .hidden {
+    visibility: hidden; /* Element takes space but not visible */
+  }
+  .none {
+    display: none; /* Element removed from flow */
+  }
+
+  /* Multi-column layout for news */
+  .newsArticle {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .eventCard {
+      padding: 10px;
+    }
+    body {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<!-- 5. Google Fonts import -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <h1 style="color: red;">Welcome to the Community Event Portal</h1> <!-- 1. Inline style -->
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="mainHeader">
+    <h2>Upcoming Events</h2>
+  </header>
+
+  <section class="eventCard">
+    <h3>Music Fest 2025</h3>
+    <p>Date: April 15, 2025</p>
+    <p>Location: Central Park</p>
+    <p>Seats Available: 50</p>
+    <a href="#">Register</a>
+  </section>
+
+  <section class="eventCard">
+    <h3>Community Workshop: Baking Basics</h3>
+    <p>Date: May 5, 2025</p>
+    <p>Location: Community Hall</p>
+    <p>Seats Available: 20</p>
+    <a href="#">Register</a>
+  </section>
+
+  <section class="newsArticle">
+    <h2>Community Bulletin</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed lacus nec arcu fermentum consectetur. Vivamus congue nisi nec urna facilisis, nec lobortis metus pretium. Nulla facilisi. Phasellus consequat fermentum purus, non faucibus purus malesuada non.
+    </p>
+    <p>
+      Aenean nec quam magna. Nam cursus leo at dapibus laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </p>
+  </section>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Music Fest 2025</td>
+        <td>April 15, 2025</td>
+        <td>Central Park</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Community Workshop: Baking Basics</td>
+        <td>May 5, 2025</td>
+        <td>Community Hall</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form style="margin-top:20px;">
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" placeholder="Your name" /><br /><br />
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" placeholder="Your email" /><br /><br />
+    <label for="eventSelect">Select Event:</label><br />
+    <select id="eventSelect" name="eventSelect">
+      <option>Music Fest 2025</option>
+      <option>Community Workshop: Baking Basics</option>
+    </select><br /><br />
+    <button type="submit">Register</button>
+  </form>
+
+  <!-- 11. Inline script alert for page loaded -->
+  <script>
+    window.onload = function() {
+      alert('Page is fully loaded!');
+    }
+  </script>
+
+</body>
+</html>
