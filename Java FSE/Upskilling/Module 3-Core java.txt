@@ -553,13 +553,9 @@ public class TryCatchExample {
 }
 
 
-# Core Java Exercises Solutions (Continued)
+21. Custom Exception
 
-Here are solutions for exercises 21-40:
 
-## 21. Custom Exception
-
-```java
 import java.util.Scanner;
 
 class InvalidAgeException extends Exception {
@@ -591,11 +587,11 @@ public class CustomExceptionExample {
         }
     }
 }
-```
 
-## 22. File Writing
 
-```java
+ 22. File Writing
+
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -618,11 +614,9 @@ public class FileWritingExample {
         scanner.close();
     }
 }
-```
 
-## 23. File Reading
+23. File Reading
 
-```java
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -645,11 +639,10 @@ public class FileReadingExample {
         }
     }
 }
-```
 
-## 24. ArrayList Example
+24. ArrayList Example
 
-```java
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -676,11 +669,10 @@ public class ArrayListExample {
         scanner.close();
     }
 }
-```
 
-## 25. HashMap Example
+25. HashMap Example
 
-```java
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -716,11 +708,9 @@ public class HashMapExample {
         scanner.close();
     }
 }
-```
 
-## 26. Thread Creation
+26. Thread Creation
 
-```java
 public class ThreadCreationExample {
     public static void main(String[] args) {
         // Method 1: Extending Thread class
@@ -766,11 +756,8 @@ class MyRunnable implements Runnable {
         }
     }
 }
-```
+27. Lambda Expressions
 
-## 27. Lambda Expressions
-
-```java
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -790,11 +777,10 @@ public class LambdaExample {
         System.out.println("Sorted by length: " + names);
     }
 }
-```
 
-## 28. Stream API
+28. Stream API
 
-```java
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -824,11 +810,10 @@ public class StreamAPIExample {
         System.out.println("Sum: " + sum);
     }
 }
-```
 
-## 29. Records (Java 16+)
+29. Records (Java 16+)
 
-```java
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -855,11 +840,10 @@ public class RecordsExample {
         filtered.forEach(System.out::println);
     }
 }
-```
 
-## 30. Pattern Matching for switch (Java 21)
+ 30. Pattern Matching for switch (Java 21)
 
-```java
+
 public class PatternMatchingSwitch {
     public static void main(String[] args) {
         printTypeInfo(42);
@@ -882,11 +866,8 @@ public class PatternMatchingSwitch {
         System.out.println(result);
     }
 }
-```
+31. Basic JDBC Connection
 
-## 31. Basic JDBC Connection
-
-```java
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -931,11 +912,10 @@ public class BasicJDBC {
         }
     }
 }
-```
 
-## 32. Insert and Update Operations in JDBC
+32. Insert and Update Operations in JDBC
 
-```java
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -1006,11 +986,9 @@ public class StudentDAO {
         }
     }
 }
-```
 
-## 33. Transaction Handling in JDBC
+ 33. Transaction Handling in JDBC
 
-```java
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -1097,9 +1075,9 @@ public class BankTransaction {
         }
     }
 }
-```
 
-## 34. Create and Use Java Modules
+
+ 34. Create and Use Java Modules
 
 This requires a specific project structure. Here's the basic setup:
 
@@ -1121,14 +1099,13 @@ project-root/
 ```
 
 2. com.utils/src/module-info.java:
-```java
+
 module com.utils {
     exports com.utils;
 }
-```
 
 3. com.utils/src/com/utils/StringUtils.java:
-```java
+
 package com.utils;
 
 public class StringUtils {
@@ -1136,17 +1113,17 @@ public class StringUtils {
         return new StringBuilder(input).reverse().toString();
     }
 }
-```
+
 
 4. com.greetings/src/module-info.java:
-```java
+
 module com.greetings {
     requires com.utils;
 }
-```
+
 
 5. com.greetings/src/com/greetings/Main.java:
-```java
+
 package com.greetings;
 
 import com.utils.StringUtils;
@@ -1158,10 +1135,10 @@ public class Main {
         System.out.println("Reversed: " + StringUtils.reverse(message));
     }
 }
-```
+
 
 To compile and run:
-```bash
+bash
 # Compile utils module first
 javac -d out/com.utils src/com.utils/module-info.java src/com.utils/com/utils/StringUtils.java
 
@@ -1170,12 +1147,12 @@ javac --module-path out -d out/com.greetings src/com.greetings/module-info.java 
 
 # Run the application
 java --module-path out -m com.greetings/com.greetings.Main
-```
 
-## 35. TCP Client-Server Chat
+
+ 35. TCP Client-Server Chat
 
 Server:
-```java
+
 import java.io.*;
 import java.net.*;
 
@@ -1205,10 +1182,9 @@ public class TCPServer {
         }
     }
 }
-```
+
 
 Client:
-```java
 import java.io.*;
 import java.net.*;
 
@@ -1236,11 +1212,11 @@ public class TCPClient {
         }
     }
 }
-```
 
-## 36. HTTP Client API (Java 11+)
 
-```java
+ 36. HTTP Client API (Java 11+)
+
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -1259,12 +1235,12 @@ public class HttpClientExample {
                 .join();
     }
 }
-```
 
-## 37. Using javap to Inspect Bytecode
+
+37. Using javap to Inspect Bytecode
 
 1. Create a simple class:
-```java
+
 public class BytecodeExample {
     public static void main(String[] args) {
         System.out.println("Hello, Bytecode!");
@@ -1274,21 +1250,19 @@ public class BytecodeExample {
         return a + b;
     }
 }
-```
+
 
 2. Compile it:
-```bash
+bash
 javac BytecodeExample.java
-```
+
 
 3. Inspect bytecode:
-```bash
+bash
 javap -c BytecodeExample
-```
 
-The output will show the bytecode instructions for each method.
 
-## 38. Decompile a Class File
+ 38. Decompile a Class File
 
 1. Compile the BytecodeExample.java from exercise 37
 2. Use a decompiler like JD-GUI or CFR to open the BytecodeExample.class file
